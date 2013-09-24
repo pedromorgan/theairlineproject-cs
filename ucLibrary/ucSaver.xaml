@@ -1,0 +1,73 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="ucLibrary.ucSaver"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+	<UserControl.Resources>
+		<Storyboard x:Key="Storyboard1">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" Storyboard.TargetName="ellipse">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.005"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(RadialGradientBrush.GradientOrigin)" Storyboard.TargetName="ellipse">
+				<EasingPointKeyFrame KeyTime="0:0:1" Value="0.816,0.837"/>
+				<EasingPointKeyFrame KeyTime="0:0:2" Value="0.811,0.23"/>
+				<EasingPointKeyFrame KeyTime="0:0:3" Value="0.206,0.168"/>
+				<EasingPointKeyFrame KeyTime="0:0:4" Value="0.205,0.806"/>
+			</PointAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.466"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0.901"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(GradientBrush.GradientStops)[1].(GradientStop.Offset)" Storyboard.TargetName="textBlock">
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.647"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(LinearGradientBrush.StartPoint)" Storyboard.TargetName="ellipse">
+				<EasingPointKeyFrame KeyTime="0:0:3" Value="0.056,0.266"/>
+				<EasingPointKeyFrame KeyTime="0:0:4" Value="0.415,0.591"/>
+			</PointAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(LinearGradientBrush.EndPoint)" Storyboard.TargetName="ellipse">
+				<EasingPointKeyFrame KeyTime="0:0:3" Value="0.767,0.242"/>
+				<EasingPointKeyFrame KeyTime="0:0:4" Value="0.401,0.612"/>
+			</PointAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+
+	<Grid x:Name="LayoutRoot" Margin="0,0,36,0" Width="170" Height="195">
+		<Ellipse x:Name="ellipse" HorizontalAlignment="Left" Height="150" Margin="10,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="150">
+			<TextBlock.Foreground>
+				<LinearGradientBrush EndPoint="0.767,0.242" StartPoint="0.056,0.266">
+					<GradientStop Color="Red" Offset="0"/>
+					<GradientStop Color="#FFC39393" Offset="0.991"/>
+				</LinearGradientBrush>
+			</TextBlock.Foreground>
+			<Ellipse.Fill>
+				<RadialGradientBrush GradientOrigin="0.148,0.83">
+					<GradientStop Color="#FFFF0707" Offset="0"/>
+					<GradientStop Color="#FFC9B4B4" Offset="1"/>
+				</RadialGradientBrush>
+			</Ellipse.Fill>
+		</Ellipse>
+		<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="43" Margin="10,155,0,-3" TextWrapping="Wrap" Text="Saving" VerticalAlignment="Top" Width="150" FontSize="32" FontFamily="QuickType" TextAlignment="Center">
+			<TextBlock.Foreground>
+				<LinearGradientBrush EndPoint="0.767,0.242" StartPoint="0.056,0.266">
+					<GradientStop Color="Red" Offset="0"/>
+					<GradientStop Color="#FFC39393" Offset="0.991"/>
+				</LinearGradientBrush>
+			</TextBlock.Foreground>
+		</TextBlock>
+	</Grid>
+</UserControl>

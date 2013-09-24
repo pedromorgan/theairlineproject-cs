@@ -1,0 +1,33 @@
+/**
+\mainpage The Airline Project
+
+The <b>Airline Project</b> is an open-source airline management simulation game. You can create your own airline, or manage an existing one.
+
+The project home is at <a href="http://theairlineproject.com/">TheAirlineProject.com</a>
+
+
+
+\note 
+    - This is the project's developers documentation and info about the source code, installation, data, etc.
+    - For public users please visit  <a href="http://theairlineproject.com/">TheAirlineProject.com</a> to download.
+    
+\section api_index API Index
+    
+ - \ref TheAirline - Main Application
+ - \ref AirportCSVReader - Utility to parse airport data
+ - \ref LanguageEditor - ?
+ - \ref ucLibrary - ?
+    
+    
+\section source_code Source Code
+
+  - The project's source code is presently in svn at Source Forge
+  - https://sourceforge.net/p/theairline/code/HEAD/tree/
+
+\note A change to git version control is on the horizon.. Watch this space..!!
+
+
+
+  
+  
+*/
